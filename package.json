@@ -1,0 +1,27 @@
+{
+  "name": "grimoire-api",
+  "version": "1.0.0",
+  "description": "A RESTful Node.js API for managing a collection of magical books.",
+  "main": "index.js",
+  "scripts": {
+  "start": "ts-node src/index.ts",  
+  "build": "tsc"
+}
+,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkhyu/grimoire-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arkhyu/grimoire-api/issues"
+  },
+  "homepage": "https://github.com/arkhyu/grimoire-api#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
