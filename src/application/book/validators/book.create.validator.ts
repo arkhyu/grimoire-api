@@ -12,7 +12,7 @@ export class CreateBookValidator {
     this.validateBoundIn(input, logicErrors);
     this.validateTitle(input, logicErrors);
 
-    return (Object.keys(logicErrors).length == 0)
+    return (logicErrors.isEmpty())
      ? ValidationResult.ok()
       : ValidationResult.fail(logicErrors.get());
   }
@@ -21,10 +21,13 @@ export class CreateBookValidator {
     input: CreateBookRequest,
     errors: ErrorCollector
   ) {
-    if (input.boundIn === "do not ask" && !input.isCursed) {
+
+    const BINDING_OPTION_SECRET = "do not ask";
+
+    if (input.boundIn === BINDING_OPTION_SECRET && !input.isCursed) {
       errors.add(
         "boundIn",
-        'Only cursed books can be bound in "do not ask"'
+        `Only cursed books can be bound in ${BINDING_OPTION_SECRET}`
       );
     }
 
